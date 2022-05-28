@@ -4,39 +4,56 @@ import com.project.merchant.entity.MerchantType;
 import com.project.merchant.repository.MerchantTypeRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
 @RestController
 public class MerchantController {
 
-    private MerchantTypeRepository merchantTypeRepository;
-
-    MerchantController(MerchantTypeRepository merchantTypeRepository) {
-        this.merchantTypeRepository = merchantTypeRepository;
-    }
-
     public static void main(String[] args) {
         SpringApplication.run(MerchantController.class, args);
     }
 
+    private MerchantTypeRepository merchantTypeRepository;
+
+    // Merchant Type
     @GetMapping("/merchantType")
     public List<MerchantType> getMerchantType() {
+        return merchantTypeRepository.findAll();
+    }
 
-        List<MerchantType> test = new ArrayList<>();
+    @PostMapping("/mercgabtType")
+    public void insertMerchantType(){
+        // insert type
+    }
 
-        MerchantType val = new MerchantType();
-        val.setId("01");
-        val.setType("tipe");
-        val.setCreatedDate(LocalDateTime.now());
+    // Merchant Menu
+    @GetMapping("/merchantMenu")
+    public void getMerchantMenu(){
+        // get menu
+    }
 
-        test.add(val);
+    @PostMapping("/merchantMenu")
+    public void insertMerchantMenu(){
+        // insert menu
+    }
 
-        return test;
+    // Merchant
+    @GetMapping("/merchant")
+    public void merchant(@RequestParam(value = "id") String id){
+        // get by id merchant
+    }
+
+    // Merchant Order
+    @GetMapping("merchantOrder")
+    public void merchantOrder(@RequestParam(value = "idMerchant") String id){
+        // get number order in today
+    }
+
+    @PostMapping("merchantOrder")
+    public void insertOrderMerchant(){
+        // save order in progress in merchant
     }
 }
