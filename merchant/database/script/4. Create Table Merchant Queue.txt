@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS merchant_queue
+(
+    id character varying(50) NOT NULL,
+	id_merchant character varying(50) NOT NULL,
+    order_datetime timestamp without time zone,
+	order_queue bigint,
+    created_date timestamp without time zone,
+	CONSTRAINT pkey_id_merchant_queue PRIMARY KEY (id),
+	CONSTRAINT fkey_id_merchant FOREIGN KEY (id_merchant) REFERENCES merchant(id)
+)

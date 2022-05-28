@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS merchant_menu
+(
+    id character varying(50) NOT NULL,
+	id_merchant character varying(50) NOT NULL,
+    menu character varying(50),
+    created_date timestamp without time zone,
+	CONSTRAINT pkey_id_merchant_menu PRIMARY KEY (id),
+	CONSTRAINT fkey_id_merchant FOREIGN KEY (id_merchant) REFERENCES merchant(id)
+)

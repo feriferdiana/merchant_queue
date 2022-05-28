@@ -1,0 +1,27 @@
+Merchant
+	- id
+	- id_merchatn_type
+	- name_merchat
+	- address
+	- owner
+	- barcode
+	- created_datetime
+
+merchant_type
+	- id
+	- type
+	- created_datetime
+
+merchant_menu
+	- id
+	- id_merchant
+	- menu
+	- created_datetime
+
+merchant_queue
+	- id
+	- id_merchant
+	- datetime_order
+	- order_queue
+	- created_datetime
+	

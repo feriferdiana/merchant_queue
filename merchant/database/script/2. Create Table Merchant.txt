@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS merchant
+(
+    id character varying(50) NOT NULL,
+	id_merchant_type character varying(50) NOT NULL,
+    name character varying(50),
+	address text,
+	owner character varying(50),
+	barcode text,
+    created_date timestamp without time zone,
+	CONSTRAINT pkey_id_merchant PRIMARY KEY (id),
+	CONSTRAINT fkey_id_merchant_type FOREIGN KEY (id_merchant_type) REFERENCES merchant_type(id)
+)

@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS merchant_type
+(
+    id character varying(50) NOT NULL,
+    type character varying(50) ,
+    created_date timestamp without time zone,
+	CONSTRAINT pkey_merchant_type PRIMARY KEY (id)
+)
